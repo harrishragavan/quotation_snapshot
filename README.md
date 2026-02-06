@@ -33,5 +33,6 @@ This app:
    - Opens PDF in browser (download optional)
 
 ---
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1c096f43-ec2b-4476-9cf0-3a39490ab9e9" />
+![Screencastfrom2026-02-0616-31-10-ezgif com-video-to-gif-converter(1)](https://github.com/user-attachments/assets/608dad6d-672b-4c3b-9522-f9be68096f07)
+
 
