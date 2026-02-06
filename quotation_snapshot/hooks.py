@@ -4,6 +4,9 @@ app_publisher = "harrish"
 app_description = "pf for quotation"
 app_email = "harrish@gmail.com"
 app_license = "mit"
+doctype_js = {
+    "Quotation": "public/js/quotation.js"
+}
 
 # Apps
 # ------------------
