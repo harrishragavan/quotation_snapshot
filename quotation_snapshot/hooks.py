@@ -8,6 +8,7 @@ doctype_js = {
     "Quotation": "public/js/quotation.js"
 }
 
+
 # Apps
 # ------------------
 
