@@ -5,10 +5,20 @@ app_description = "pf for quotation"
 app_email = "harrish@gmail.com"
 app_license = "mit"
 doctype_js = {
-    "Quotation": "public/js/quotation.js"
+    "Quotation": "public/js/quotation.js", 
+}
+doc_events = {
+    "Quotation": {
+        "after_insert": "quotation_snapshot.quotation_attachment.attach_item_files",
+        "on_update": "quotation_snapshot.quotation_attachment.attach_item_files"
+    }
 }
 
-
+doctype_js = {
+    "Quotation": [
+        "public/js/quotation_email.js"
+    ]
+}
 # Apps
 # ------------------
 
