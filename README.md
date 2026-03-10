@@ -1,53 +1,30 @@
-# Quotation Print Snapshot (Frappe App)
+# Quotation Snapshot
 
-A custom Frappe app to **freeze quotation print formats as HTML snapshots** and **view them later as PDFs**, ensuring audit safety and consistency even if print formats change in the future.
+Custom Frappe / ERPNext app that enhances the **Quotation email workflow** by automating attachments, email templates, and email dialog restrictions.
 
-This app is designed for **ERPNext / Frappe v16+**.
-
----
-
-##  Problem This App Solves
-
-In standard ERPNext:
-- Print formats can change over time
-- Old quotations may not render the same way later
-- No built-in way to “freeze” a print output at the time of sharing with a customer
-
-###  Solution
-This app:
-- Captures the **exact print format output (HTML)** at a point in time
-- Stores it in a **child table** inside Quotation
-- Allows users to **open the snapshot as a PDF** later
-- Ensures **quotation output integrity**
+This app ensures that when users send a quotation email, the process is standardized and attachments from item masters are automatically included.
 
 ---
 
-## How It Works
+# Features
 
-1. User creates a **Quotation**
-2. Clicks **Save Print Snapshot**
-3. App renders the selected print format (`quotation pf`) as **HTML**
-4. HTML is stored in a child table (`Quotation Print Snapshot`)
-5. Later, clicking **View PDF**:
-   - Regenerates PDF using Frappe print engine
-   - Opens PDF in browser (download optional)
+### 1. Automatic Item Attachments
+When a **Quotation is saved**, the app automatically:
 
----
-![Screencastfrom2026-02-0616-31-10-ezgif com-video-to-gif-converter(1)](https://github.com/user-attachments/assets/608dad6d-672b-4c3b-9522-f9be68096f07)
+- Fetches files attached to each **Item Master**
+- Copies them to the **Quotation attachments**
+- Prevents duplicate attachments
+- disable the unwanted **Checkbox**
+- Ready to send email format
+
+### 2. File Path
+1. **quotation_snapshot/quotation_snapshot/quotation_attachment.py** (Server logic)
+2. **quotation_snapshot/public/js/quotation_email.js**  (Client script)
+
+   ⚠️ ADD FILE PATH IN **hooks.py**.
 
 
-##  How It Works After Fix
+### 2. Demo 
 
-1. User clicks **Save Print Snapshot**
-2. A dialog appears to select a Print Format
-3. Selected Print Format is rendered using `frappe.get_print()`
-4. HTML snapshot is saved in child table (`custom_print_snapshots`)
-5. When clicking **View PDF**, the system:
-   - Retrieves the stored snapshot row
-   - Uses its stored `print_format`
-   - Generates PDF using Frappe print engine
-   - Opens PDF in new browser tab
-  
----
-![Screencastfrom2026-02-1115-39-39-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/d2e55666-5df7-420a-a8d4-8191989d4a54)
 
+![Screencastfrom2026-03-1011-55-27-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/c1d4160f-9775-4fff-8563-4bdbde0666e8)
