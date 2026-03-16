@@ -22,7 +22,15 @@ When a **Quotation is saved**, the app automatically:
 2. **quotation_snapshot/public/js/quotation_email.js**  (Client script)
 
    ⚠️ ADD FILE PATH IN **hooks.py**.
+   
+   ⚠️ Create a **template_name** and **default_cc** in the quotation_email.js
+         
+        frm.email_doc = function(message) {
 
+            let template_name = "Quotation Default Template";
+            let default_cc = "sample@gmail.com";
+               ..
+               }
 
 ### 2. Demo 
 
